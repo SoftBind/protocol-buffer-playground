@@ -1,0 +1,23 @@
+message Course {
+	required int32 id = 1;
+	required string course_name = 2;
+	repeated Student student = 3;
+}
+
+message Student {
+	required int32 id = 1;
+	required string first_name = 2;
+	required string last_name = 3;
+	required string email = 4;
+	repeated PhoneNumber phone = 5;
+
+	message PhoneNumber {
+		required string number = 1;
+		required PhoneType type = 2;
+	}
+
+	enum PhoneType {
+		MOBILE = 0;
+		LANDLINE = 1;
+	}
+}
